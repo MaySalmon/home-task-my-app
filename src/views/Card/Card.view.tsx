@@ -10,11 +10,12 @@ const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
     <div
       style={{
-        background: "pink",
+        background: "rgba(255,255,255, 0.9)",
         display: "flex",
         flexDirection: "column",
         gap: "10px",
-        border: "solid red",
+        width: "300px",
+        height: "300px",
       }}
     >
       <span>{props.item.name}</span>
