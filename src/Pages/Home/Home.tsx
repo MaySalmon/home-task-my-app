@@ -1,9 +1,11 @@
 import React from "react";
 
+import HomeView from "./Home.view";
+
 type Props = Record<never, never>;
 
 const Home: React.FC<Props> = () => {
-  return <span>ddd</span>;
+  return <HomeView></HomeView>;
 };
 
 Home.displayName = "Home";
