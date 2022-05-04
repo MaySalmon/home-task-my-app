@@ -1,13 +1,14 @@
 import React from "react";
 import Card from "../../views/Card/Card";
+import { useTranslation } from "react-i18next";
 
 import { DummyData } from "./Home.model";
 
 import logo from "../../assets/images/cyber.jpg";
-import { useTranslation } from "react-i18next";
 
 type Props = {
   data: DummyData[];
+  onClickDownload?: (value: string) => void;
 };
 
 const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
@@ -17,7 +18,6 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
     <div
       style={{
         padding: "100px",
-        backgroundColor: "pink",
         height: "100%",
         width: "100%",
         backgroundImage: `url(${logo})`,
@@ -35,7 +35,11 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
         }}
       >
         {props.data.map((item: DummyData) => (
-          <Card item={item}></Card>
+          <Card
+            key={item.id}
+            item={item}
+            onClickDownload={() => props.onClickDownload?.(item.id)}
+          ></Card>
         ))}
       </div>
     </div>

@@ -4,6 +4,7 @@ import { DummyData } from "../../pages/Home/Home.model";
 
 type Props = {
   item: DummyData;
+  onClickDownload?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
@@ -24,6 +25,7 @@ const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
       <span>{props.item.date}</span>
       <span>{props.item.platform}</span>
       <span>{props.item.version}</span>
+      <button onClick={props.onClickDownload}>Click To Download</button>
     </div>
   );
 };

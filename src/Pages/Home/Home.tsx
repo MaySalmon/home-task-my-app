@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-import { DummyData } from "./Home.model";
+import React, { useRef, useState } from "react";
+import { Parser } from "json2csv";
+
 import HomeView from "./Home.view";
+
+import { DummyData } from "./Home.model";
 
 type Props = Record<never, never>;
 
 const Home: React.FC<Props> = () => {
-  const [dataState, setDataState] = useState<string[]>([]);
+  //const [dataState, setDataState] = useState<string[]>([]);
+  const downloadRef = useRef<HTMLAnchorElement>(null);
+  const [selectedItemsState, setSelectedItemsState] = useState<string[]>([]);
 
   const data: DummyData[] = [
     {
@@ -42,7 +47,34 @@ const Home: React.FC<Props> = () => {
     },
   ];
 
-  return <HomeView data={data}></HomeView>;
+  const onClickDownloadData = (value: string) => {
+    const dataToDownload =
+      data.find((item: DummyData) => item.id === value) || [];
+
+    if (!downloadRef.current) {
+      return;
+    }
+    const json2csvParser = new Parser();
+    const csv = json2csvParser.parse(dataToDownload);
+
+    downloadRef.current.href =
+      "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+    downloadRef.current.click();
+  };
+
+  return (
+    <React.Fragment>
+      <HomeView data={data} onClickDownload={onClickDownloadData}></HomeView>
+      <a
+        ref={downloadRef}
+        href="#"
+        download="data.csv"
+        style={{ display: "hidden" }}
+      >
+        Hidden download CSV
+      </a>
+    </React.Fragment>
+  );
 };
 
 Home.displayName = "Home";
