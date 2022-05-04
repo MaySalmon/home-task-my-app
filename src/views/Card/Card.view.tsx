@@ -1,9 +1,30 @@
 import React from "react";
 
-type Props = Record<never, never>;
+import { DummyData } from "../../pages/Home/Home.model";
 
-const CardView: React.FC<Props> = () => {
-  return <div></div>;
+type Props = {
+  item: DummyData;
+};
+
+const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
+  return (
+    <div
+      style={{
+        background: "pink",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        border: "solid red",
+      }}
+    >
+      <span>{props.item.name}</span>
+      <span>{props.item.URL}</span>
+      <span>{props.item.id}</span>
+      <span>{props.item.date}</span>
+      <span>{props.item.platform}</span>
+      <span>{props.item.version}</span>
+    </div>
+  );
 };
 
 CardView.displayName = "CardView";

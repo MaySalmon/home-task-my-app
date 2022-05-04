@@ -1,11 +1,14 @@
 import React from "react";
+import { DummyData } from "../../pages/Home/Home.model";
 
 import CardView from "./Card.view";
 
-type Props = Record<never, never>;
+type Props = {
+  item: DummyData;
+};
 
-const Card: React.FC<Props> = () => {
-  return <CardView></CardView>;
+const Card: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
+  return <CardView item={props.item}></CardView>;
 };
 
 Card.displayName = "Card";

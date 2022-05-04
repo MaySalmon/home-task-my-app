@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../../views/Card/Card";
 
 import { DummyData } from "./Home.model";
 
@@ -8,10 +9,23 @@ type Props = {
 
 const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
-    <div className="temp">
-      {props.data.map((item: DummyData) => (
-        <div>{item.date}</div>
-      ))}
+    <div
+      style={{
+        padding: "100px",
+      }}
+    >
+      <h1> Please Choose:</h1>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "40px",
+        }}
+      >
+        {props.data.map((item: DummyData) => (
+          <Card item={item}></Card>
+        ))}
+      </div>
     </div>
   );
 };
