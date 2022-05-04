@@ -1,6 +1,6 @@
 import React from "react";
 
-import Home from "./Pages/Home/Home";
+import Home from "./pages/Home/Home";
 
 type Props = Record<never, never>;
 
