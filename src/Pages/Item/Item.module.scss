@@ -53,8 +53,13 @@
       }
     }
 
-    .downloadBtn {
-      margin-bottom: 10px;
+    .download {
+      text-decoration: none !important;
+
+      &__Btn {
+        display: flex;
+        gap: 5px;
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ import Card from "../../views/Card/Card";
 import { ItemDummyData } from "../Home/Home.model";
 import classes from "./Item.module.scss";
 import logo from "../../assets/images/profero-logo.jpg";
+import Icon from "../../views/Icon/Icon";
 
 type Props = {
   tempData: ItemDummyData;
@@ -45,14 +46,15 @@ const ItemView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
               </span>
             </div>
           </div>
-          <a href={props.tempData.url}>
+          <a className={classes["download"]} href={props.tempData.url}>
             <Button
-              className={classes["downloadBtn"]}
+              className={classes["download__Btn"]}
               type="button"
               color="primary"
               onClick={props.onClickDownload}
             >
               {t("pages.item.download")}
+              <Icon name="cilArrowCircleBottom"></Icon>
             </Button>
           </a>
         </Card>

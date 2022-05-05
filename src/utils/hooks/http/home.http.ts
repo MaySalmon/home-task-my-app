@@ -7,6 +7,7 @@ import {
 import { serverAxios } from "../../http";
 
 class homeHttp {
+  // TODO: implement this properly whwn the demo server is working
   private static route = "/localhost:8000";
 
   public async getData(): Promise<GetDataResponse> {
