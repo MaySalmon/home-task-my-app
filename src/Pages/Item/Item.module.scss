@@ -7,33 +7,54 @@
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.content {
+.header {
   display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 400px;
-  margin-top: 100px;
+  padding: 50px;
   justify-content: space-between;
 
-  .attribute {
-    display: flex;
-    gap: 10px;
-
-    &__title {
-      color: white;
-      text-decoration: underline;
-    }
-
-    &__content {
-      color: rgba(white, 0.7);
-      font-weight: 300;
-    }
+  .logo {
+    width: 200px;
+    height: 50px;
   }
+}
 
-  .downloadBtn {
-    margin-bottom: 10px;
+.body {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+    justify-content: space-between;
+    padding: 30px;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .attribute {
+        display: flex;
+        gap: 10px;
+
+        &__title {
+          color: white;
+          text-decoration: underline;
+        }
+
+        &__content {
+          color: rgba(white, 0.7);
+          font-weight: 300;
+        }
+      }
+    }
+
+    .downloadBtn {
+      margin-bottom: 10px;
+    }
   }
 }
