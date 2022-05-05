@@ -3,7 +3,7 @@ import React from "react";
 import CardView from "./Card.view";
 
 import { DummyData } from "../../pages/Home/Home.model";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   item: DummyData;

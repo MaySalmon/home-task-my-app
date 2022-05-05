@@ -42,107 +42,53 @@
 
   &--primary {
     border: 1px solid white;
-    color: map-get($colors, primary);
+    background-color: map-get($colors, primary);
+    color: white;
   }
 
   &--secondary {
-    border: 1px solid map-get($colors, secondary);
-    color: map-get($colors, secondary);
+    border: 1px solid white;
+    background-color: map-get($colors, secondary);
+    color: white;
   }
 
   &--tertiary {
-    border: 1px solid map-get($colors, tertiary);
-    color: map-get($colors, tertiary);
+    border: 1px solid white;
+    background-color: map-get($colors, tertiary);
+    color: white;
   }
 
   &--success {
-    border: 1px solid map-get($colors, success);
-    color: map-get($colors, success);
+    border: 1px solid white;
+    background-color: map-get($colors, success);
+    color: white;
   }
 
   &--info {
-    border: 1px solid map-get($colors, info);
-    color: map-get($colors, info);
+    border: 1px solid white;
+    background-color: map-get($colors, info);
+    color: white;
   }
 
   &--danger {
-    border: 1px solid map-get($colors, danger);
-    color: map-get($colors, danger);
+    border: 1px solid white;
+    background-color: map-get($colors, danger);
+    color: white;
   }
 
   &--warning {
-    border: 1px solid map-get($colors, warning);
-    color: map-get($colors, warning);
-  }
-
-  &--muted {
     border: 1px solid white;
+    background-color: map-get($colors, warning);
     color: white;
   }
 
   &--dark {
-    border: 1px solid map-get($colors, dark);
-    color: map-get($colors, dark);
+    border: 1px solid white;
+    background-color: map-get($colors, dark);
+    color: white;
   }
 }
 
 .link {
   text-decoration: none !important;
-}
-
-:global(.c-dark-theme) {
-  .btn {
-    &--transparent {
-      color: white;
-
-      &:hover {
-        background-color: rgba(white, 0.1);
-      }
-    }
-
-    &--primary {
-      border-color: white;
-      color: white;
-    }
-
-    &--secondary {
-      border: 1px solid map-get($colors-dark, secondary);
-      color: map-get($colors-dark, secondary);
-    }
-
-    &--tertiary {
-      border: 1px solid map-get($colors-dark, tertiary);
-      color: map-get($colors-dark, tertiary);
-    }
-
-    &--success {
-      border: 1px solid map-get($colors-dark, success);
-      color: map-get($colors-dark, success);
-    }
-
-    &--info {
-      border: 1px solid map-get($colors-dark, info);
-      color: map-get($colors-dark, info);
-    }
-
-    &--danger {
-      border: 1px solid map-get($colors-dark, danger);
-      color: map-get($colors-dark, danger);
-    }
-
-    &--warning {
-      border: 1px solid map-get($colors-dark, warning);
-      color: map-get($colors-dark, warning);
-    }
-
-    &--muted {
-      border: 1px solid white;
-      color: white;
-    }
-
-    &--dark {
-      border: 1px solid map-get($colors-dark, dark);
-      color: map-get($colors-dark, dark);
-    }
-  }
 }

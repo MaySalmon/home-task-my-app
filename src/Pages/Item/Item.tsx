@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Parser } from "json2csv";
 
 import ItemView from "./Item.view";
 
-import { Parser } from "json2csv";
-
 import { GetDataSingleResponse } from "../../models/http/home";
 import useHttp from "../../utils/use-http";
-import { DummyData, ItemDummyData } from "../Home/Home.model";
+import { ItemDummyData } from "../Home/Home.model";
 
 type Props = Record<never, never>;
 

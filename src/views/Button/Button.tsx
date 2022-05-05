@@ -1,37 +1,41 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
-import ButtonView from "./Button.view";
+import MButtonView from "./Button.view";
 
 import { ThemeColors } from "../../models/general";
 
-type Props = {
-  to?: string;
+interface Props {
   className?: string;
   color?: ThemeColors;
   disabled?: boolean;
   type?: "submit" | "reset" | "button";
+  block?: boolean;
+  to?: string;
+  style?: CSSProperties;
   size?: "sm";
+  children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-};
+}
 
-const Button: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
+const MButton: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
-    <div></div>
-    // <ButtonView
-    //   to={props.to}
-    //   className={props.className}
-    //   color={props.color}
-    //   disabled={props.disabled}
-    //   type={props.type}
-    //   size={props.size}
-    //   onClick={props.onClick}
-    // >
-    //   {props.children}
-    // </ButtonView>
+    <MButtonView
+      color={props.color}
+      disabled={props.disabled}
+      className={props.className}
+      type={props.type}
+      block={props.block}
+      style={props.style}
+      to={props.to}
+      size={props.size}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </MButtonView>
   );
 };
 
-Button.displayName = "Button";
-Button.defaultProps = {};
+MButton.displayName = "MButton";
+MButton.defaultProps = {};
 
-export default Button;
+export default MButton;

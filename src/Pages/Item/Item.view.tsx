@@ -1,11 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useMatch, useParams } from "react-router-dom";
-import item from "../../i18n/en/pages/item";
-import Button from "../../views/Button/Button";
-import Card from "../../views/Card/Card";
 
-import { DummyData, ItemDummyData } from "../Home/Home.model";
+import Button from "../../views/Button/Button";
+
+import { ItemDummyData } from "../Home/Home.model";
 import classes from "./Item.module.scss";
 
 type Props = {
@@ -22,13 +20,14 @@ const ItemView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
         <span>{props.tempData?.id}</span>
         <span>{props.tempData?.url}</span>
         <a href={props.tempData.url}>
-          <button onClick={props.onClickDownload}>download</button>
+          <Button type="button" color="primary" onClick={props.onClickDownload}>
+            {t("pages.item.download")}
+          </Button>
         </a>
       </div>
-      {/* <Button to="/">{t("pages.item.back")}</Button> */}
-      <Link to="/">
-        <button>{t("pages.item.back")}</button>
-      </Link>
+      <Button type="button" color="primary" to="/">
+        {t("pages.item.back")}
+      </Button>
     </div>
   );
 };
