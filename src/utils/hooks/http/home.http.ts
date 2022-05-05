@@ -8,7 +8,7 @@ class homeHttp {
 
   public async getdata(): Promise<GetDataResponse> {
     return serverAxios
-      .post(`${homeHttp.route}`)
+      .get(`${homeHttp.route}`)
       .then((response: AxiosResponse<GetDataResponse>) => {
         return response.data;
       });
