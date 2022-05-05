@@ -4,12 +4,25 @@ import { Parser } from "json2csv";
 import HomeView from "./Home.view";
 
 import { DummyData } from "./Home.model";
+import useHttp from "../../utils/use-http";
+import { GetDataResponse } from "../../models/http/home";
 
 type Props = Record<never, never>;
 
 const Home: React.FC<Props> = () => {
   const [dataState, setDataState] = useState<string[]>([]);
   const downloadRef = useRef<HTMLAnchorElement>(null);
+
+  const http = useHttp();
+
+  http.home
+    .getdata()
+    .then((response: GetDataResponse) => {
+      console.log(response);
+    })
+    .catch(() => {
+      console.error();
+    });
 
   const data: DummyData[] = [
     {
