@@ -68,7 +68,7 @@ const Item: React.FC<Props> = () => {
       <ItemView
         tempData={tempData}
         onClickDownload={onClickDownloadData}
-      ></ItemView>{" "}
+      ></ItemView>
       <a
         ref={downloadRef}
         href="#"

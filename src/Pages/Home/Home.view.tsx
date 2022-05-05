@@ -15,7 +15,6 @@ type Props = {
 
 const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   const { t } = useTranslation();
-  console.log(props.data);
 
   return (
     <div className={classes["container"]}>
@@ -28,29 +27,39 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
           <Card key={item.id} className={classes["card"]}>
             <div className={classes["cardData"]}>
               <div className={classes["attribute"]}>
-                <span className={classes["attribute__title"]}>Name:</span>
+                <span className={classes["attribute__title"]}>
+                  {t("pages.home.cards.name")}
+                </span>
                 <span className={classes["attribute__content"]}>
                   {item.name}
                 </span>
               </div>
               <div className={classes["attribute"]}>
-                <span className={classes["attribute__title"]}>URL:</span>
+                <span className={classes["attribute__title"]}>
+                  {t("pages.home.cards.url")}
+                </span>
                 <span className={classes["attribute__content"]}>
                   {item.url}
                 </span>
               </div>
               <div className={classes["attribute"]}>
-                <span className={classes["attribute__title"]}>Id:</span>
+                <span className={classes["attribute__title"]}>
+                  {t("pages.home.cards.id")}
+                </span>
                 <span className={classes["attribute__content"]}>{item.id}</span>
               </div>
               <div className={classes["attribute"]}>
-                <span className={classes["attribute__title"]}>Platform:</span>
+                <span className={classes["attribute__title"]}>
+                  {t("pages.home.cards.platform")}
+                </span>
                 <span className={classes["attribute__content"]}>
                   {item.platform}
                 </span>
               </div>
               <div className={classes["attribute"]}>
-                <span className={classes["attribute__title"]}>Versions:</span>
+                <span className={classes["attribute__title"]}>
+                  {t("pages.home.cards.version")}
+                </span>
                 <span className={classes["attribute__content"]}>
                   {item.version}
                 </span>
@@ -62,7 +71,7 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
               className={classes["chooseBtn"]}
               onClick={() => props.onClick?.(item.id)}
             >
-              Choose
+              {t("pages.home.cards.choose")}
             </Button>
           </Card>
         ))}

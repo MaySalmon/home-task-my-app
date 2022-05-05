@@ -22,20 +22,31 @@ const ItemView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
         {t("pages.item.back")}
       </Link>
       <Card className={classes["content"]}>
-        <div className={classes["attribute"]}>
-          <span className={classes["attribute__title"]}>Id:</span>
-          <span className={classes["attribute__content"]}>
-            {props.tempData?.id}
-          </span>
-        </div>
-        <div className={classes["attribute"]}>
-          <span className={classes["attribute__title"]}>URL:</span>
-          <span className={classes["attribute__content"]}>
-            {props.tempData?.url}
-          </span>
+        <div>
+          <div className={classes["attribute"]}>
+            <span className={classes["attribute__title"]}>
+              {t("pages.item.cards.id")}
+            </span>
+            <span className={classes["attribute__content"]}>
+              {props.tempData?.id}
+            </span>
+          </div>
+          <div className={classes["attribute"]}>
+            <span className={classes["attribute__title"]}>
+              {t("pages.item.cards.url")}
+            </span>
+            <span className={classes["attribute__content"]}>
+              {props.tempData?.url}
+            </span>
+          </div>
         </div>
         <a href={props.tempData.url}>
-          <Button type="button" color="primary" onClick={props.onClickDownload}>
+          <Button
+            className={classes["downloadBtn"]}
+            type="button"
+            color="primary"
+            onClick={props.onClickDownload}
+          >
             {t("pages.item.download")}
           </Button>
         </a>

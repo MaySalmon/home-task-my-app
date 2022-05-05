@@ -16,6 +16,7 @@
   width: 400px;
   height: 400px;
   margin-top: 100px;
+  justify-content: space-between;
 
   .attribute {
     display: flex;
@@ -30,5 +31,9 @@
       color: rgba(white, 0.7);
       font-weight: 300;
     }
+  }
+
+  .downloadBtn {
+    margin-bottom: 10px;
   }
 }
