@@ -13,7 +13,7 @@ interface Props {
   to?: string;
   style?: CSSProperties;
   size?: "sm";
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 

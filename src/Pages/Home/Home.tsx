@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import HomeView from "./Home.view";
 
@@ -9,7 +10,9 @@ import { GetDataResponse } from "../../models/http/home";
 type Props = Record<never, never>;
 
 const Home: React.FC<Props> = () => {
+  // TODO: implement when demo server is working
   const [dataState, setDataState] = useState<DummyData[]>([]);
+  const navigate = useNavigate();
 
   const http = useHttp();
 
@@ -57,7 +60,12 @@ const Home: React.FC<Props> = () => {
     },
   ];
 
-  return <HomeView data={data}></HomeView>;
+  return (
+    <HomeView
+      data={data}
+      onClick={(id: string) => navigate(`downloadurl/${id}`)}
+    ></HomeView>
+  );
 };
 
 Home.displayName = "Home";

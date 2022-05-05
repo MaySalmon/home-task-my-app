@@ -1,11 +1,15 @@
+@import "../../styles/variables.scss";
+
 .container {
   display: flex;
   flex-direction: column;
+  padding: 10px;
   gap: 10px;
-  height: 300px;
-  width: 300px;
-  text-decoration: none !important;
-  background: rgba(255, 255, 255, 0.9);
-  color: blue;
+  width: 200px;
+  height: 200px;
+  color: white;
   font-weight: 900;
+  border-radius: 25px;
+  box-shadow: 3px 3px 5px rgba(black, 0.6);
+  background-color: map-get($theme-colors, formBG);
 }

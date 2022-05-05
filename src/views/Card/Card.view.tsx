@@ -1,24 +1,16 @@
 import React from "react";
 
-import { DummyData } from "../../pages/Home/Home.model";
-
 import classes from "./Card.module.scss";
 
 type Props = {
-  item: DummyData;
-  onClickDownload?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  onClick?: () => void;
+  className?: string;
+  children?: React.ReactNode;
 };
 
 const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
-    <div className={classes["container"]} onClick={props.onClick}>
-      <span>{props.item.name}</span>
-      <span>{props.item.url}</span>
-      <span>{props.item.id}</span>
-      <span>{props.item.date}</span>
-      <span>{props.item.platform}</span>
-      <span>{props.item.version}</span>
+    <div className={`${classes["container"]} ${props.className || ""}`.trim()}>
+      {props.children}
     </div>
   );
 };
