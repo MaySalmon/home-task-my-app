@@ -1,12 +1,20 @@
 import React from "react";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import ReactDOM from "react-dom";
+
 import reportWebVitals from "./reportWebVitals";
 import "./i18n/i18n";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <DndProvider backend={HTML5Backend}>
+      <BrowserRouter>
+        <App></App>
+      </BrowserRouter>
+    </DndProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

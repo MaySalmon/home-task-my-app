@@ -1,10 +1,13 @@
 import React from "react";
+import { Link, Navigate } from "react-router-dom";
 
 import { DummyData } from "../../pages/Home/Home.model";
+import './Card.module.scss';
 
 type Props = {
   item: DummyData;
   onClickDownload?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
 };
 
 const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
@@ -17,15 +20,22 @@ const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
         gap: "10px",
         width: "300px",
         height: "300px",
+        textDecoration: "none !important",
       }}
+      onClick={props.onClick}
     >
-      <span>{props.item.name}</span>
-      <span>{props.item.URL}</span>
+      <span
+        style={{
+          textDecoration: "none !important",
+        }}
+      >
+        {props.item.name}
+      </span>
+      <span className="temp">{props.item.URL}</span>
       <span>{props.item.id}</span>
       <span>{props.item.date}</span>
       <span>{props.item.platform}</span>
       <span>{props.item.version}</span>
-      <button onClick={props.onClickDownload}>Click To Download</button>
     </div>
   );
 };

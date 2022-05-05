@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { DummyData } from "./Home.model";
 
-import logo from "../../assets/images/cyber.jpg";
+import background from "../../assets/images/cyber.jpg";
 
 type Props = {
   data: DummyData[];
@@ -20,7 +20,7 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
         padding: "100px",
         height: "100%",
         width: "100%",
-        backgroundImage: `url(${logo})`,
+        backgroundImage: `url(${background})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
