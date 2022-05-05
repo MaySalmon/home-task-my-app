@@ -8,7 +8,6 @@ import classes from "./Home.module.scss";
 
 type Props = {
   data: DummyData[];
-  onClickDownload?: (value: string) => void;
 };
 
 const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
@@ -19,11 +18,7 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
       <h1 className={classes["title"]}>{t("pages.home.title")}</h1>
       <div className={classes["body"]}>
         {props.data.map((item: DummyData) => (
-          <Card
-            key={item.id}
-            item={item}
-            onClickDownload={() => props.onClickDownload?.(item.id)}
-          ></Card>
+          <Card key={item.id} item={item}></Card>
         ))}
       </div>
     </div>

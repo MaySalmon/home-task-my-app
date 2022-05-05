@@ -1,15 +1,26 @@
-import { AxiosResponse, CancelTokenSource } from "axios";
+import { AxiosResponse } from "axios";
 
-import { GetDataResponse } from "../../../models/http/home";
+import {
+  GetDataResponse,
+  GetDataSingleResponse,
+} from "../../../models/http/home";
 import { serverAxios } from "../../http";
 
 class homeHttp {
-  private static route = "/resources";
+  private static route = "/localhost:8000";
 
-  public async getdata(): Promise<GetDataResponse> {
+  public async getData(): Promise<GetDataResponse> {
     return serverAxios
-      .get(`${homeHttp.route}`)
+      .get(`${homeHttp.route}/resources`)
       .then((response: AxiosResponse<GetDataResponse>) => {
+        return response.data;
+      });
+  }
+
+  public async getDataById(id: string): Promise<GetDataSingleResponse> {
+    return serverAxios
+      .get(`/downloadurl/${id}`)
+      .then((response: AxiosResponse<GetDataSingleResponse>) => {
         return response.data;
       });
   }

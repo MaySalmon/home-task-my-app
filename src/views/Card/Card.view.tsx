@@ -14,7 +14,7 @@ const CardView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
     <div className={classes["container"]} onClick={props.onClick}>
       <span>{props.item.name}</span>
-      <span>{props.item.URL}</span>
+      <span>{props.item.url}</span>
       <span>{props.item.id}</span>
       <span>{props.item.date}</span>
       <span>{props.item.platform}</span>

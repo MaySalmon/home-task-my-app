@@ -1,4 +1,9 @@
 @import "../styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   height: 100%;
@@ -7,12 +12,11 @@ html {
 body {
   margin: 0;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scrollbar-width: thin;
+  color: white !important;
 }
 
 #root {
@@ -46,5 +50,252 @@ input[type="radio"] {
   &-thumb {
     border-radius: 10px;
     background-color: #c6c6c6;
+  }
+}
+
+.react-datepicker {
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 8px;
+}
+
+.card-header {
+  padding: 8px;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+form label {
+  font-size: 12px;
+}
+
+label {
+  margin: 0;
+}
+
+button {
+  &:focus {
+    box-shadow: unset !important;
+  }
+}
+
+.leaflet-routing-container.leaflet-bar.leaflet-control {
+  display: none !important;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  color: #fdfdfd;
+  background: black;
+}
+
+.c-app {
+  --inverted: #b0b0c5;
+}
+
+// ------------ TIMELINE START -----------
+
+.vis-timeline {
+  border: none !important;
+  background-color: transparent !important;
+
+  // Hide scrollbar for IE, Edge and Firefox
+  * {
+    -ms-overflow-style: none; // IE and Edge
+
+    // scrollbar-width: none;  "Firefox"
+  }
+
+  // Hide scrollbar for Chrome, Safari and Opera
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.vis-grid.vis-minor {
+  border-left-style: dashed !important;
+  border-left-color: #9c9c9c !important;
+}
+
+.vis-item-content {
+  padding: 5px 0 !important;
+  width: 100% !important;
+  transform: translateX(0) !important;
+}
+
+.vis-item-overflow {
+  overflow: visible !important;
+}
+
+.vis-selected > * {
+  border-radius: 50% !important;
+  box-shadow: 0 5px 3px rgba(black, 0.3) !important;
+}
+
+.vis-time-axis .vis-text {
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  color: #acacac !important;
+}
+
+.vis-center {
+  // box-shadow: 10px 10px 13px -10px rgba(black, .3) inset;
+}
+
+.vis-time-axis .vis-grid.vis-minor,
+.vis-time-axis .vis-grid.vis-major {
+  border-width: 1px !important;
+  border-color: transparent !important;
+}
+
+.vis-group {
+  // border-width: 0 !important;
+  border-color: rgba(white, 0.1) !important;
+  background-color: transparent !important;
+
+  &:nth-child(2n) {
+    // background-color: #dfdfdf !important;
+  }
+}
+
+.vis-label {
+  background-color: transparent !important;
+  border-color: rgba(white, 0.1) !important;
+
+  &:nth-child(2n) {
+    // background-color: #dfdfdf !important;
+  }
+}
+
+.vis-panel.vis-bottom,
+.vis-panel.vis-center,
+.vis-panel.vis-left,
+.vis-panel.vis-right,
+.vis-panel.vis-top {
+  border-width: 0 !important;
+  border-color: transparent !important;
+}
+
+.vis-labelset .vis-label {
+  border-bottom: 1px solid rgba(white, 0.1) !important;
+}
+
+// ------------ TIMELINE END -----------
+
+.c-dark-theme {
+  .vis-group {
+    // border-color: #0a0b18 !important;
+  }
+
+  .vis-time-axis.vis-foreground {
+    border-left: 0.5px solid #7b7c8a;
+  }
+
+  .vis-itemset {
+    border-left: 0.5px solid #7b7c8a;
+  }
+
+  .vis-time-axis .vis-text {
+    color: white !important;
+  }
+
+  .vis-time-axis .vis-text.vis-minor {
+    font-size: 8px !important;
+    font-weight: 300 !important;
+  }
+
+  .vis-time-axis .vis-text.vis-major {
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    top: -5px !important;
+  }
+
+  .leaflet-container {
+    background: #191a1a !important;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #383838;
+  }
+
+  .react-datepicker__header {
+    border-bottom: 1px solid #585757;
+    color: #e1e1e1;
+    background: #23242d;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: #e1e1e1;
+  }
+
+  .react-datepicker__day:hover,
+  .react-datepicker__time-name:hover,
+  .react-datepicker__time-container.react-datepicker__time.react-datepicker__time-box {
+    ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {
+      background: #585757;
+    }
+  }
+
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    color: #e1e1e1;
+  }
+
+  .react-datepicker-popper {
+    z-index: map-get($layers, above_table) !important;
+    width: 400px;
+  }
+
+  .react-datepicker-popper[data-placement^="bottom"]
+    .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^="bottom"]
+    .react-datepicker__triangle::before {
+    border-bottom-color: #585757;
+  }
+
+  .react-datepicker-popper[data-placement^="bottom"]
+    .react-datepicker__triangle {
+    border-bottom-color: #23242d;
+  }
+
+  .react-datepicker__time-container .react-datepicker__time {
+    background: #0a0b18;
+  }
+
+  .react-datepicker__time-container {
+    border-left: 1px solid #585757;
+  }
+
+  .react-datepicker {
+    border: solid 1px #404040;
+    color: #e1e1e1;
+    background: #0a0b18;
+  }
+
+  &.c-app {
+    --inverted: whitesmoke;
   }
 }

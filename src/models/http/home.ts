@@ -8,8 +8,13 @@ export type GetDataRequest = {
 export type GetDataResponse = {
   name: string;
   id: string;
-  URL: string;
+  url: string;
   version: string;
   date: string;
   platform: string;
 }[];
+
+export type GetDataSingleResponse = {
+  id: string;
+  url: string;
+};

@@ -1,8 +1,13 @@
 export type DummyData = {
   name: string;
   id: string;
-  URL: string;
+  url: string;
   version: string;
   date: string;
   platform: string;
+};
+
+export type ItemDummyData = {
+  id: string;
+  url: string;
 };
