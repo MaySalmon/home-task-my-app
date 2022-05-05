@@ -31,19 +31,19 @@ const Item: React.FC<Props> = () => {
     return [
       {
         id: "97fc5a40-1a55-40e0-9f9a-2fc5ced5c288",
-        url: "https://www.moovex.ai/privacy-policy",
+        url: "https://www.google.com",
       },
       {
         id: "975a6eb3-9574-436c-9aa1-7808f6e4ad53",
-        url: "https://www.moovex.ai/privacy-policy",
+        url: "https://www.google.com",
       },
       {
         id: "bca4781a-7af4-4baa-87ea-38ee75e16c90",
-        url: "https://www.moovex.ai/privacy-policy",
+        url: "https://www.google.com",
       },
       {
         id: "76de8132-29d8-4f60-8f4e-b5a654e0f4ee",
-        url: "https://www.moovex.ai/privacy-policy",
+        url: "https://www.google.com",
       },
     ].find(
       (item: ItemDummyData) => item.id === params.id
