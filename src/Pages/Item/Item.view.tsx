@@ -1,15 +1,18 @@
+import { t } from "i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 
-import background from "../../assets/images/cyber2.jpg";
 import { DummyData } from "../Home/Home.model";
-import Item from "./Item";
+import classes from "./Item.module.scss";
 
 type Props = Record<never, never>;
 
 const ItemView: React.FC<Props> = () => {
+  const { t } = useTranslation();
+
   const id = useParams();
-  
+
   const data: DummyData[] = [
     {
       name: "eMule",
@@ -45,21 +48,10 @@ const ItemView: React.FC<Props> = () => {
     },
   ];
 
-
   return (
-    <div
-      style={{
-        padding: "100px",
-        height: "100%",
-        width: "100%",
-        backgroundImage: `url(${background})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className={classes["container"]}>
       <Link to="/">
-      <button>Back TO Home</button>
+        <button>{t("pages.item.back")}</button>
       </Link>
     </div>
   );

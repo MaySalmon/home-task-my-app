@@ -1,10 +1,10 @@
 import React from "react";
-import Card from "../../views/Card/Card";
 import { useTranslation } from "react-i18next";
 
 import { DummyData } from "./Home.model";
 
-import background from "../../assets/images/cyber.jpg";
+import Card from "../../views/Card/Card";
+import classes from "./Home.module.scss";
 
 type Props = {
   data: DummyData[];
@@ -15,25 +15,9 @@ const HomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   const { t } = useTranslation();
 
   return (
-    <div
-      style={{
-        padding: "100px",
-        height: "100%",
-        width: "100%",
-        backgroundImage: `url(${background})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <h1 style={{ color: "white" }}>{t("pages.home.title")}</h1>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "40px",
-        }}
-      >
+    <div className={classes["container"]}>
+      <h1 className={classes["title"]}>{t("pages.home.title")}</h1>
+      <div className={classes["body"]}>
         {props.data.map((item: DummyData) => (
           <Card
             key={item.id}

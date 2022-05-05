@@ -1,0 +1,19 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/images/cyber.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px;
+}
+
+.title {
+  color: white;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}

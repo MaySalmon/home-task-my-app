@@ -7,6 +7,7 @@ import ReactDOM from "react-dom";
 
 import reportWebVitals from "./reportWebVitals";
 import "./i18n/i18n";
+import "./styles/main.scss";
 
 ReactDOM.render(
   <React.StrictMode>

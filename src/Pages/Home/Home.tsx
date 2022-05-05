@@ -8,9 +8,8 @@ import { DummyData } from "./Home.model";
 type Props = Record<never, never>;
 
 const Home: React.FC<Props> = () => {
-  //const [dataState, setDataState] = useState<string[]>([]);
+  const [dataState, setDataState] = useState<string[]>([]);
   const downloadRef = useRef<HTMLAnchorElement>(null);
-  const [selectedItemsState, setSelectedItemsState] = useState<string[]>([]);
 
   const data: DummyData[] = [
     {
